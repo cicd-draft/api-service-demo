@@ -18,7 +18,7 @@ jobs:
 
       - name: do do-something
         run: |
-          pwd && ls && tree ./build
+          pwd && ls && ls -l ./build/libs/
 
 
 

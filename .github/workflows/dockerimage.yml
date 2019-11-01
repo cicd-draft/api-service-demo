@@ -15,10 +15,10 @@ jobs:
       - name: build jar
         run: |
           ./gradlew -x jar build
-          
+
       - name: do do-something
         run: |
-          pwd && ls 
+          pwd && ls && tree ./build
 
 
 

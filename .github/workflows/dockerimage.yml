@@ -6,21 +6,15 @@ on:
       - cicd
 jobs:
 
-  build:
+  build-jar:
 
     runs-on: ubuntu-latest
-
     steps:
-    
-    - uses: actions/checkout@v1
+      - name: build jar
+        uses: actions/checkout@master
+        env:
+          BUILD_SCRIPT: ./gradlew -x jar build
 
-    - name: build jar
-    - uses: actions/setup-java@v1
-      with:
-        java-version: 8
-    - uses: eskatos/gradle-command-action@v1
-      with:
-        arguments: -x jar build
-
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag api-test-demo:$(date +%s)
+  # build image:
+  #   - name: Build the Docker image
+  #     run: docker build . --file Dockerfile --tag api-test-demo:$(date +%s)

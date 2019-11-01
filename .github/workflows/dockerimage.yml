@@ -7,13 +7,17 @@ on:
 jobs:
 
   build-jar:
-
     runs-on: ubuntu-latest
     steps:
       - name: build jar
         uses: actions/checkout@master
         env:
           BUILD_SCRIPT: ./gradlew -x jar build
+      - name: do do-something
+        run: |
+          pwd && ls 
+
+
 
   build-image:
     runs-on: ubuntu-latest

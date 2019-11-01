@@ -15,6 +15,10 @@ jobs:
         env:
           BUILD_SCRIPT: ./gradlew -x jar build
 
-  # build image:
-  #   - name: Build the Docker image
-  #     run: docker build . --file Dockerfile --tag api-test-demo:$(date +%s)
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Build the Docker image
+      uses: actions/checkout@master
+      env: 
+        BUILD_SCRIPT: docker build . --file Dockerfile --tag api-test-demo:$(date +%s)

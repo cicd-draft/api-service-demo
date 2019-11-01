@@ -1,4 +1,4 @@
-name: Docker Image CI Only branch: cicd
+name: Docker Image CI Only branch-cicd
 
 on: 
   push:

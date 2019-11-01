@@ -9,10 +9,13 @@ jobs:
   build-jar:
     runs-on: ubuntu-latest
     steps:
+      - name: my-checkout
+        uses: actions/checkout@master  
+
       - name: build jar
-        uses: actions/checkout@master
-        env:
-          BUILD_SCRIPT: ./gradlew -x jar build
+        run: |
+          ./gradlew -x jar build
+          
       - name: do do-something
         run: |
           pwd && ls 

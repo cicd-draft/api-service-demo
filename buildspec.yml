@@ -6,3 +6,4 @@ phases:
       docker: 18
     commands:
       - hostname && whoami
+      - docker --version

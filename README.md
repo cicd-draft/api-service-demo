@@ -11,16 +11,16 @@ description: >-
 
 
 #### 1.junit test
-包含JUnit单元测试，运行`./gradlew clean build`
+包含JUnit单元测试，运行`./gradlew clean build` 或者 `make test`
 
 #### 2.build package
-生成jar包，方便CI/CD及docker，运行`./gradlew -x jar build`
+生成jar包，方便CI/CD及docker，运行`./gradlew -x jar build` 或者 `make build`
 
 #### 3. Run
 
 - local run
-
-启动项目，通过`./gradlew bootRun`
+ 
+启动项目，通过`./gradlew bootRun` 或者 `make bootRun`
 
 API接口为`http://localhost:8080/api/increase?number=323`
 

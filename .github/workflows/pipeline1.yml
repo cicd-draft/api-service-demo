@@ -21,7 +21,11 @@ jobs:
       run: docker build . --file Dockerfile --tag api-test-demo:$(date "+%Y%m%d%H%M")
 
     - name: Run a single-line script
-      run: echo "Hello World!"
+      run: |
+      echo "Hello World!"
+    # Strip git ref prefix from version
+      VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,') 
+      echo $VERSION
 
     #  - name: push_to_dockerhub
     #   uses: elgohr/Publish-Docker-Github-Action@master
@@ -29,6 +33,9 @@ jobs:
     #     name: cicddraft/api:tagname
     #     username: ${{ secrets.DOCKER_USERNAME }}
     #     password: ${{ secrets.DOCKER_PASSWORD }}
+
+# Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
 
 
     - name: push_image

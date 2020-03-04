@@ -18,13 +18,18 @@ jobs:
       run: ./gradlew -x jar build
 
     - name: build_image
-      run: docker build . --file Dockerfile --tag api-test-demo:$(date "+%Y%m%d%H%M")
+      run: docker build . --file Dockerfile --tag cicddraft/api-test-demo:$(date "+%Y%m%d%H")
 
-    - name: Run a single-line script
-      run: |
-        echo "Hello World!"
-        VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,') 
-        echo $VERSION
+    # - name: Get the version
+    #   run: |
+    #     echo ${GITHUB_REF:10}
+  
+  
+    # - name: Run a single-line script
+    #   run: |
+    #     echo "Hello World!"
+    #     VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,') 
+    #     echo $VERSION
 
     #  - name: push_to_dockerhub
     #   uses: elgohr/Publish-Docker-Github-Action@master
@@ -32,8 +37,8 @@ jobs:
     #     name: cicddraft/api:tagname
     #     username: ${{ secrets.DOCKER_USERNAME }}
     #     password: ${{ secrets.DOCKER_PASSWORD }}
-    
+
     - name: push_image
       run: |
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} 
-        docker push api-test-demo:$(date "+%Y%m%d%H%M")
+        docker push cicddraft/api-test-demo:$(date "+%Y%m%d%H")

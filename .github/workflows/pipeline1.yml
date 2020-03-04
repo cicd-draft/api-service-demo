@@ -21,6 +21,7 @@ jobs:
       run: |
         VERSION=$(git rev-parse --short HEAD)
         echo $VERSION
+        echo $GITHUB_SHA
         docker build . --file Dockerfile --tag cicddraft/api-test-demo:$VERSION
 
     # - name: Run a single-line script
@@ -38,5 +39,6 @@ jobs:
 
     - name: push_image
       run: |
+        echo $GITHUB_SHA
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} 
         docker push cicddraft/api-test-demo:$VERSION

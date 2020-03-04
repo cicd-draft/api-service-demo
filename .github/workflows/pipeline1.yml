@@ -11,8 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: checkout_code
     - uses: actions/checkout@v1
-    - name: Build_Image
+
+    - name: build_jar
+      run: ./gradlew -x jar build
+      
+    - name: build_image
       run: docker build . --file Dockerfile --tag api-test-demo:$(date +%s)
 
     - name: Run a single-line script

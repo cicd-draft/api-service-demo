@@ -40,5 +40,5 @@ jobs:
     - name: push_image
       run: |
         echo $GITHUB_SHA
-        docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} 
-        docker push cicddraft/api-test-demo:$VERSION
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
+        docker push cicddraft/api-test-demo:$GITHUB_SHA

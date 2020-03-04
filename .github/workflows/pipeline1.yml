@@ -18,13 +18,10 @@ jobs:
       run: ./gradlew -x jar build
 
     - name: build_image
-      env:
-        VERSION: $(git rev-parse --short HEAD)
       run: |
+        VERSION=$(git rev-parse --short HEAD)
+        echo $VERSION
         docker build . --file Dockerfile --tag cicddraft/api-test-demo:$VERSION
-
-
-
 
     # - name: Run a single-line script
     #   run: |

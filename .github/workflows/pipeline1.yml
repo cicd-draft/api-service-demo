@@ -22,7 +22,7 @@ jobs:
         VERSION=$(git rev-parse --short HEAD)
         echo $VERSION
         echo $GITHUB_SHA
-        docker build . --file Dockerfile --tag cicddraft/api-test-demo:$VERSION
+        docker build . --file Dockerfile --tag cicddraft/api-test-demo:$GITHUB_SHA
 
     # - name: Run a single-line script
     #   run: |

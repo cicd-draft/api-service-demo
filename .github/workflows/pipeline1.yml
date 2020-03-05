@@ -19,8 +19,6 @@ jobs:
         NUMBER: ${{ github.run_number }}
       run: ./gradlew -x jar build && echo $NUMBER
 
-
-
     - name: build_image
       run: |
         VERSION=$(git rev-parse --short HEAD)

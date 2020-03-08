@@ -18,7 +18,8 @@ jobs:
       env:
         NUMBER: ${{ github.run_number }}
       run: |
-        echo ${{ secrets.DOCKER_USERNAME }}
+        echo ${{ secrets.DOCKER_USERNAME }} >> tt.txt
+        cat tt.txt
         ./gradlew -x jar build && echo $NUMBER
 
     - name: build_image

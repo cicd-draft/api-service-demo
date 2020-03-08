@@ -17,7 +17,9 @@ jobs:
     - name: build_jar
       env:
         NUMBER: ${{ github.run_number }}
-      run: ./gradlew -x jar build && echo $NUMBER
+      run: |
+        echo ${{ secrets.DOCKER_USERNAME }}
+        ./gradlew -x jar build && echo $NUMBER
 
     - name: build_image
       run: |

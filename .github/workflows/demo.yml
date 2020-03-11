@@ -11,6 +11,9 @@ jobs:
     steps:
     - name: My step one
       run: echo "Hello ,Github actions, I'm >>My step one<<"
-      run: echo "My step one- second run"
     - name: My step one
-      run: echo ">>My step two<<"
+      run: |
+        echo "My step one begin..."
+        echo "doing..."
+        echo "Finished!!!"
+        

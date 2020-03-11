@@ -1,0 +1,21 @@
+name: Build with CMake and Ninja
+
+on: [push]
+
+jobs:
+  my_build:
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Check OS (Linux)
+      run: uname -a
+      if: matrix.os == 'ubuntu-latest'
+    - name: Check OS  (Windows)
+      run: systeminfo
+      if: matrix.os == 'windows-latest'
+    - name: Check OS  (macOS)
+      run: system_profiler SPSoftwareDataType
+      if: matrix.os == 'macos-latest'

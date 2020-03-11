@@ -16,4 +16,10 @@ jobs:
         echo "My step one begin..."
         echo "doing..."
         echo "Finished!!!"
-        
+
+  my_second_job:
+    name: My second job
+    runs-on: macos-latest
+    steps:
+      - name: check OS info
+        run : system_profiler SPSoftwareDataType

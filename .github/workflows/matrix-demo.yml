@@ -1,6 +1,12 @@
 name: Test on every major OS
 
-on: [push]
+# 所有分支
+# on: [push]
+
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   my_build:
@@ -20,4 +26,3 @@ jobs:
       run: system_profiler SPSoftwareDataType
       if: matrix.os == 'macos-latest'
 
-      

@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - master
+      
 jobs:
   my_first_job:
     name: My first job

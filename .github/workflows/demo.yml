@@ -5,11 +5,12 @@ on:
     branches: 
       - master
 jobs:
-  my_first job:
+  my_first_job:
     name: My first job
     runs-on: ubuntu-latest
     steps:
     - name: My step one
       run: echo "Hello ,Github actions, I'm >>My step one<<"
+      run: echo "My step one- second run"
     - name: My step one
       run: echo ">>My step two<<"

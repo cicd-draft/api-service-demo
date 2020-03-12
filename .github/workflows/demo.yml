@@ -29,4 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get install ninja-build
-      - run: ninja --version
+      - run: |
+          ninja --version
+          echo "without step name"

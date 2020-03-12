@@ -36,8 +36,10 @@ jobs:
 
   container_job:
     runs-on: ubuntu-latest
-    container: 'node:current'
+    container: cicddraft/api-test-demo:2020030414
+    # container: 'node:current'
     steps:
       - run: |
           hostname
-          node -v
+          pwd
+          ls -l

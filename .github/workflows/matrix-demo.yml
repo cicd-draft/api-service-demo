@@ -6,7 +6,7 @@ name: Test on every major OS
 on:
   push:
     branches:
-      - master
+      - release1
 
 jobs:
   my_build:

@@ -44,3 +44,16 @@ jobs:
           pwd
           uname -a
           ls -l
+
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - name: Hello world action step
+      id: hello
+      uses: cicd-draft/qr-demo1-docker-actions@v1
+      with:
+        who-to-greet: 'qinrui from China.'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"

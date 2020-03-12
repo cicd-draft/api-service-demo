@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: My step one
       run: echo "Hello ,Github actions, I'm >>My step one<<"
-    # - name: My step two
+    - name: My step two
       run: |
         echo "My step one begin..."
         echo "doing..."
@@ -24,3 +24,9 @@ jobs:
     steps:
       - name: check OS info
         run : system_profiler SPSoftwareDataType
+
+  my_third_job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sudo apt-get install ninja-build
+      - run: ninja --version

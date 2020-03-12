@@ -32,3 +32,12 @@ jobs:
       - run: |
           ninja --version
           echo "without step name"
+          hostname
+
+  container_job:
+    runs-on: ubuntu-latest
+    container: 'node:current'
+    steps:
+      - run: |
+          hostname
+          node -v

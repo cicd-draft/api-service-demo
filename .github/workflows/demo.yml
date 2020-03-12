@@ -51,7 +51,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: cicd-draft/qr-demo1-docker-actions@v1
+      uses: cicd-draft/qr-demo1-docker-actions@1b8ce0b
       with:
         who-to-greet: 'qinrui from China.'
     # Use the output from the `hello` step

@@ -7,7 +7,9 @@ on:
       
 jobs:
   my_first_job:
+    # 作业1名称为 Demo First job
     name: Demo First job
+    # 此作业在 Linux 上运行
     runs-on: ubuntu-latest
     steps:
     - name: My step one
@@ -16,6 +18,7 @@ jobs:
       run: |
         echo "My step one begin..."
         echo "doing..."
+        echo 'The job id was ${{ jobs.my_first_job }}, and job name is ${{jobs.my_first_job.name}} '
         echo "Finished!!!"
   my_second_job:
     name: Demo Second job
@@ -23,14 +26,15 @@ jobs:
     steps:
       - name: check OS info
         run : system_profiler SPSoftwareDataType
-  my_third_job:
-    runs-on: ubuntu-latest
-    steps:
-      - run: sudo apt-get install ninja-build
-      - run: |
-          ninja --version
-          echo "without step name"
-          hostname
+        
+#   my_third_job:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: sudo apt-get install ninja-build
+#       - run: |
+#           ninja --version
+#           echo "without step name"
+#           hostname
 
 #   container_job:
 #     runs-on: ubuntu-latest

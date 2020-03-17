@@ -14,11 +14,13 @@ jobs:
     steps:
     - name: My step one
       run: echo "Hello ,Github actions, I'm >>My step one<<"
+      # 标明 step id，可以不写
+      id: step1_id
     - name: My step two
       run: |
         echo "My step one begin..."
         echo "doing..."
-        echo 'The job id was ${{ my_first_job.name }}. '
+        echo 'The first step name was ${{ steps.step1_id.name }}. '
         echo "Finished!!!"
   my_second_job:
     name: Demo Second job

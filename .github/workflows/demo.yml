@@ -13,15 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: My step one
-      run: echo "Hello ,Github actions, I'm >>My step one<<"
+      run: |
+        echo "Hello ,Github actions, I'm >>My step one<<"
+        sleep 5
       # 标明 step id，可以不写
       id: hello
     - name: My step two
-      run: |
-        echo "My step one begin..."
-        echo "doing..."
-        echo 'The time was ${{ steps.hello.outputs.time }}.'
-        echo "Finished!!!"
+      run: echo 'The time was ${{ steps.hello.outputs.time }}.'
   my_second_job:
     name: Demo Second job
     runs-on: macos-latest

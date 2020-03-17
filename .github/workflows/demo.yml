@@ -7,7 +7,7 @@ on:
       
 jobs:
   my_first_job:
-    name: My first job
+    name: Demo First job
     runs-on: ubuntu-latest
     steps:
     - name: My step one
@@ -17,14 +17,12 @@ jobs:
         echo "My step one begin..."
         echo "doing..."
         echo "Finished!!!"
-
   my_second_job:
-    name: My second job
+    name: Demo Second job
     runs-on: macos-latest
     steps:
       - name: check OS info
         run : system_profiler SPSoftwareDataType
-
   my_third_job:
     runs-on: ubuntu-latest
     steps:
@@ -34,26 +32,26 @@ jobs:
           echo "without step name"
           hostname
 
-  container_job:
-    runs-on: ubuntu-latest
-    container: cicddraft/api-test-demo:2020030414
-    # container: 'node:current'
-    steps:
-      - run: |
-          hostname
-          pwd
-          uname -a
-          ls -l
+#   container_job:
+#     runs-on: ubuntu-latest
+#     container: cicddraft/api-test-demo:2020030414
+#     # container: 'node:current'
+#     steps:
+#       - run: |
+#           hostname
+#           pwd
+#           uname -a
+#           ls -l
 
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-    - name: Hello world action step
-      id: hello
-      uses: cicd-draft/qr-demo1-docker-actions@1b8ce0b
-      with:
-        who-to-greet: 'qinrui from China.'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+#   hello_world_job:
+#     runs-on: ubuntu-latest
+#     name: A job to say hello
+#     steps:
+#     - name: Hello world action step
+#       id: hello
+#       uses: cicd-draft/qr-demo1-docker-actions@1b8ce0b
+#       with:
+#         who-to-greet: 'qinrui from China.'
+#     # Use the output from the `hello` step
+#     - name: Get the output time
+#       run: echo "The time was ${{ steps.hello.outputs.time }}"

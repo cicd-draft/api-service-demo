@@ -9,6 +9,7 @@ jobs:
   my_first_job:
     # 作业1名称为 Demo First job
     name: Demo First job
+    id: job1
     # 此作业在 Linux 上运行
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +19,7 @@ jobs:
       run: |
         echo "My step one begin..."
         echo "doing..."
-        echo 'The job id was ${{ jobs.my_first_job }}, and job name is ${{jobs.my_first_job.name}} '
+        echo 'The job id was ${{ job1 }}, and job name is ${{job1.name}} '
         echo "Finished!!!"
   my_second_job:
     name: Demo Second job

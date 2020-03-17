@@ -20,7 +20,7 @@ jobs:
       run: |
         echo "My step one begin..."
         echo "doing..."
-        echo 'The first step name was ${{ steps.step1_id.name }}. '
+        echo 'The first step name was ${{ steps.step1_id.outputs.time }}. '
         echo "Finished!!!"
   my_second_job:
     name: Demo Second job

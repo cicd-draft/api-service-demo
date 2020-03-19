@@ -16,6 +16,7 @@ jobs:
       run: |
         echo "Hello ,Github actions, I'm >>My step one<<"
         sleep 5
+        date
       # 标明 step id，可以不写
       id: hello
     - name: My step two

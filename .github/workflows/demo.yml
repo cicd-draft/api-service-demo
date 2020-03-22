@@ -14,6 +14,7 @@ jobs:
     steps:
     - name: My step one
       run: |
+        whoami
         pwd
         echo $HOME $GITHUB_WORKSPACE $GITHUB_EVENT_PATH
         echo "Hello ,Github actions, I'm >>My step one<<"

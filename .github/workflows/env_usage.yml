@@ -1,7 +1,5 @@
 name: my workflow demo 
 
-
-  
 on: 
   push:
     branches: 
@@ -20,7 +18,7 @@ jobs:
       run: |
         whoami && pwd
         echo "this is job1"
-        echo $SERVER
+        echo ${{ SERVER }}
   my_second_job:
     name: job2
     runs-on: macos-latest

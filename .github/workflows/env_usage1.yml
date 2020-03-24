@@ -6,13 +6,26 @@ on:
       - master
 
 jobs:
-  env_usage_job1:
+  展示默认变量:
     name: job1
     runs-on: ubuntu-latest
     steps:
     - name: My step one
       run: |
         echo "Show Default environment variables"
-        echo $HOME
-        echo $GITHUB_WORKFLOW
+        echo ">> In this example <<"
+        echo "HOME is :" $HOME
+        echo "GITHUB_WORKFLOW is:" $GITHUB_WORKFLOW
         echo "GITHUB_RUN_ID is : "$GITHUB_RUN_ID
+        echo "GITHUB_RUN_NUMBER is :" $GITHUB_RUN_NUMBER
+        echo "GITHUB_ACTION is :"  $GITHUB_ACTION
+        echo "GITHUB_ACTIONS is :" $GITHUB_ACTIONS
+        echo "GITHUB_ACTOR is :" $GITHUB_ACTOR
+        echo "GITHUB_REPOSITORY is :" $GITHUB_REPOSITORY
+        echo "GITHUB_EVENT_NAME is :" $GITHUB_EVENT_NAME
+        echo "GITHUB_EVENT_PATH is :" $GITHUB_EVENT_PATH
+        echo "GITHUB_WORKSPACE is :"  $GITHUB_WORKSPACE
+        echo "GITHUB_SHA is :"  $GITHUB_SHA
+        echo "GITHUB_REF is :"  $GITHUB_REF
+        echo "GITHUB_HEAD_REF is :"  $GITHUB_HEAD_REF
+        echo "GITHUB_BASE_REF is :"  $GITHUB_BASE_REF

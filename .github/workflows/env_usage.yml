@@ -5,26 +5,25 @@ on:
     branches: 
       - master
 
-# 用于该workflow的所有job
+# 用于该workflow的所有job和steps
 env:
   SERVER: production
 
 jobs:
-  env_usage_job:
+  env_usage_job1:
     name: job1
     runs-on: ubuntu-latest
     steps:
     - name: My step one
       run: |
-        whoami && pwd
         echo "this is job1"
-        echo ${{ SERVER }}
-  my_second_job:
+        echo $SERVER
+# 不能写成 echo ${{ SERVER }}
+  second_job:
     name: job2
     runs-on: macos-latest
     steps:
     - name: My step one
       run: |
-        whoami && pwd
         echo "this is job2"
         echo $SERVER

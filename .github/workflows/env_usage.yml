@@ -1,7 +1,6 @@
 name: my workflow demo 
 
-env:
-  SERVER: production
+
   
 on: 
   push:
@@ -9,7 +8,8 @@ on:
       - master
 
 # 用于该workflow的所有job
-
+env:
+  SERVER: production
 
 jobs:
   env_usage_job:
@@ -20,7 +20,7 @@ jobs:
       run: |
         whoami && pwd
         echo "this is job1"
-        echo $ERVER
+        echo $SERVER
   my_second_job:
     name: job2
     runs-on: macos-latest

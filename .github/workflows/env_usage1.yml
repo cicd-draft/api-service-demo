@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  展示默认变量:
+  Show_env:
     name: job1
     runs-on: ubuntu-latest
     steps:

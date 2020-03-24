@@ -1,0 +1,30 @@
+name: my workflow demo 
+
+on: 
+  push:
+    branches: 
+      - master
+
+# 用于该workflow的所有job
+env:
+  SERVER: production
+
+jobs:
+  env_usage_job:
+    name: job1
+    runs-on: ubuntu-latest
+    steps:
+    - name: My step one
+      run: |
+        whoami && pwd
+        echo "this is job1"
+        echo ${{ SERVER }}
+  my_second_job:
+    name: job2
+    runs-on: macos-latest
+    steps:
+    - name: My step one
+      run: |
+        whoami && pwd
+        echo "this is job2"
+        echo ${{ SERVER }}

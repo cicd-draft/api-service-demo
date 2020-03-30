@@ -16,3 +16,4 @@ jobs:
       run: |
         pwd  && ls -l
         ./gradlew -x jar build
+        ls -l build/libs/api-demo-0.0.1-SNAPSHOT.jar

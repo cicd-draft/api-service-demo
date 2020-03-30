@@ -1,0 +1,16 @@
+name: my workflow demo 
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  artifacts_demo_job:
+    name: job1
+    runs-on: ubuntu-latest
+    steps:
+    - name: My step one
+      run: |
+        pwd  && ls -l
+        ./gradlew -x jar build

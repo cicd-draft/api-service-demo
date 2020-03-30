@@ -10,7 +10,9 @@ jobs:
     name: job1
     runs-on: ubuntu-latest
     steps:
-    - name: My step one
+    - name: Checkout code
+      uses: actions/checkout@v1
+    - name: Build jar
       run: |
         pwd  && ls -l
         ./gradlew -x jar build

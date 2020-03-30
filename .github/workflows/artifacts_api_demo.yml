@@ -17,3 +17,8 @@ jobs:
         pwd  && ls -l
         ./gradlew -x jar build
         ls -l build/libs/api-demo-0.0.1-SNAPSHOT.jar
+    - name: Archive SNAPSHOT.jar
+      uses: actions/upload-artifact@v1
+      with:
+        name: api_snapshot_jar
+        path: build/libs/api-demo-0.0.1-SNAPSHOT.jar

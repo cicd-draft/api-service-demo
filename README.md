@@ -1,3 +1,6 @@
+#
+edit in local
+
 ---
 description: >-
   A demo Jave project with tool gradle,for our CICD.
@@ -63,3 +66,5 @@ run docker container
 
 ---
 test
+
+test pull request from command line. by 20200426

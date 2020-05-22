@@ -8,3 +8,7 @@ build/
 
 ### CI 
 jenkins/
+
+# vscode workspace
+.classpath  
+.project

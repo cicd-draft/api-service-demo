@@ -12,3 +12,7 @@ jenkins/
 # vscode workspace
 .classpath  
 .project
+
+
+bin/
+.settings/

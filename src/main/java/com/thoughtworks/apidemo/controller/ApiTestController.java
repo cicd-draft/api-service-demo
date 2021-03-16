@@ -23,4 +23,9 @@ public class ApiTestController {
         return apiTestService.getCheckNumberResult(number);
     }
 
+    @GetMapping("/health")
+    public String getHealth() {
+        return "I'm healthy,ver: 1.0";
+    }
+    
 }

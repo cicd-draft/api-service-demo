@@ -6,6 +6,7 @@ pipeline {
         stage('Unit Test'){
             steps{
                 sh "echo  I am stage: Unit Test"
+                sh "pwd"
                 sh "./gradlew clean build"
             }
         }
